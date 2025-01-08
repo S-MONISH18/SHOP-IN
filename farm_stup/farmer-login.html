@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Login and Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .toggle-form {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Farmer Portal</h1>
+        
+        <!-- Login Form -->
+        <form id="loginForm">
+            <h2>Login</h2>
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="loginEmail" required>
+            
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+            
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Registration Form -->
+        <form id="registrationForm" style="display:none;">
+            <h2>Register</h2>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            
+            <label for="farmName">Farm Name:</label>
+            <input type="text" id="farmName" name="farmName" required>
+            
+            <label for="farmLocation">Farm Location:</label>
+            <input type="text" id="farmLocation" name="farmLocation" required>
+            
+            <label for="farmSize">Farm Size (in acres):</label>
+            <input type="number" id="farmSize" name="farmSize" required>
+            
+            <label for="primaryCrop">Primary Crop:</label>
+            <select id="primaryCrop" name="primaryCrop" required>
+                <option value="">Select a crop</option>
+                <option value="wheat">Wheat</option>
+                <option value="corn">Corn</option>
+                <option value="rice">Rice</option>
+                <option value="soybeans">Soybeans</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="toggle-form">
+            <a href="#" id="toggleForm">Don't have an account? Register here</a>
+        </div>
+
+        <!-- Back to Home Link -->
+        <div class="back-link">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const registrationForm = document.getElementById('registrationForm');
+        const toggleFormLink = document.getElementById('toggleForm');
+
+        toggleFormLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'flex';
+                registrationForm.style.display = 'none';
+                toggleFormLink.textContent = "Don't have an account? Register here";
+            } else {
+                loginForm.style.display = 'none';
+                registrationForm.style.display = 'flex';
+                toggleFormLink.textContent = "Already have an account? Login here";
+            }
+        });
+    </script>
+</body>
+</html>
