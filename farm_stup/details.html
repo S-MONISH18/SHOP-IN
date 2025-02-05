@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+        }
+        .left-section {
+            flex: 1;
+        }
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .middle-section {
+            flex: 2;
+        }
+        .product-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .product-price {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .availability {
+            font-size: 16px;
+            color: gray;
+        }
+        .about-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .about-list {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        .right-section {
+            flex: 1;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .right-section .product-price {
+            font-size: 22px;
+        }
+        .delivery {
+            font-size: 14px;
+            color: green;
+        }
+        .quantity-dropdown {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .button {
+            width: 100%;
+            padding: 12px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .buy-now { background-color: #4CAF50; }
+        .buy-now:hover { background-color: #45a049; }
+        .add-to-cart { background-color: #1a73e8; }
+        .add-to-cart:hover { background-color: #155db1; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Left Section (Product Image) -->
+    <div class="left-section">
+        <img src="" alt="Product Image" class="product-image" id="productImage">
+    </div>
+
+    <!-- Middle Section (Product Info) -->
+    <div class="middle-section">
+        <h1 class="product-name" id="productName"></h1>
+        <div class="product-price" id="productPrice"></div>
+        <div class="availability" id="productAvailability"></div>
+
+        <h3 class="about-title">About this item</h3>
+        <ul class="about-list">
+            <li>Fresh and high-quality produce</li>
+            <li>Carefully selected and quality checked</li>
+            <li>Available in different quantities</li>
+            <li>Direct from local farmers</li>
+            <li>Best prices guaranteed</li>
+        </ul>
+    </div>
+
+    <!-- Right Section (Pricing & Actions) -->
+    <div class="right-section">
+        <div class="product-price" id="rightProductPrice"></div>
+        <div class="delivery">FREE delivery by Tomorrow</div>
+        <div class="availability" id="rightAvailability">In Stock</div>
+
+        <select class="quantity-dropdown" id="quantitySelect">
+            <option value="1 KG">1 KG</option>
+            <option value="2 KG">2 KG</option>
+            <option value="5 KG">5 KG</option>
+        </select>
+
+        <button class="button buy-now" id="buyNowBtn">Buy Now</button>
+        <button class="button add-to-cart" id="addToCartBtn">Add to Cart</button>
+    </div>
+</div>
+
+<script>
+    const products = [
+        { id: 1, name: "Tomato (1 KG)", price: 30.00, image: "tomato250x200.jpg", available: "Available Quantity: 1 KG" },
+        { id: 2, name: "Carrot (1 KG)", price: 19.99, image: "carrot250x200.jpg", available: "Available Quantity: 2 KG" },
+        { id: 3, name: "Onion (1 KG)", price: 79.99, image: "onion250x200.jpg", available: "Available Quantity: 5 KG" },
+        { id: 4, name: "Brinjal (1 KG)", price: 40.99, image: "brinjal250x200.jpg", available: "Available Quantity: 3 KG" },
+        { id: 5, name: "Capsicum (1 KG)", price: 49.99, image: "capsicum250x200.jpg", available: "Available Quantity: 4 KG" },
+        { id: 6, name: "Cucumber (1 KG)", price: 25.99, image: "cucumber250x200.jpg", available: "Available Quantity: 1 KG" }
+    ];
+
+    function getProductFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const productId = parseInt(params.get('id'));
+        return products.find(p => p.id === productId);
+    }
+
+    const product = getProductFromUrl();
+
+    if (product) {
+        document.getElementById('productImage').src = product.image;
+        document.getElementById('productName').textContent = product.name;
+        document.getElementById('productPrice').textContent = `$${product.price.toFixed(2)}`;
+        document.getElementById('productAvailability').textContent = product.available;
+        document.getElementById('rightProductPrice').textContent = `$${product.price.toFixed(2)}`;
+
+        document.getElementById('buyNowBtn').addEventListener('click', () => alert(`Buying ${product.name}`));
+        document.getElementById('addToCartBtn').addEventListener('click', () => alert(`${product.name} added to cart!`));
+    } else {
+        document.body.innerHTML = "<h2>Product not found</h2>";
+    }
+</script>
+
+</body>
+</html>

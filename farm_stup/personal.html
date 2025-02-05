@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <title>Person Details</title>     
+    <style>         
+        body {             
+            font-family: Arial, sans-serif;             
+            line-height: 1.6;             
+            color: #333;             
+            max-width: 800px;             
+            margin: 0 auto;             
+            padding: 20px;         
+        }         
+        .back-button {             
+            position: absolute;             
+            top: 20px;             
+            left: 20px;             
+            background-color: #3498db;             
+            color: white;             
+            padding: 10px 15px;             
+            border: none;             
+            border-radius: 5px;             
+            cursor: pointer;             
+            text-decoration: none;         
+        }         
+        .back-button:hover {             
+            background-color: #2980b9;         
+        }         
+        .person-card {             
+            background-color: #f4f4f4;             
+            border-radius: 8px;             
+            padding: 20px;             
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);         
+        }         
+        .person-image {             
+            width: 200px;             
+            height: 200px;             
+            border-radius: 50%;             
+            object-fit: cover;             
+            margin-bottom: 20px;         
+        }         
+        h1 {             
+            color: #2c3e50;             
+            margin-bottom: 10px;         
+        }         
+        .contact-info {             
+            margin-top: 20px;         
+        }         
+        .contact-info p {             
+            margin: 5px 0;         
+        }         
+        .contact-label {             
+            font-weight: bold;             
+            margin-right: 10px;         
+        }         
+        @media (max-width: 600px) {             
+            .person-image {                 
+                width: 150px;                 
+                height: 150px;             
+            }         
+        }     
+    </style> 
+</head> 
+<body>     
+    <a href="javascript:history.back()" class="back-button">&#8592; Back</a>
+    
+    <div class="person-card">         
+        <img src="veggies.jpg" alt="John Doe" class="person-image">         
+        <h1>John Doe</h1>         
+        <div class="contact-info">             
+            <p><span class="contact-label">Email:</span> john.doe@example.com</p>             
+            <p><span class="contact-label">Phone:</span> (123) 456-7890</p>             
+            <p><span class="contact-label">Address:</span> 123 Main St, Anytown, USA 12345</p>             
+            <p><span class="contact-label">Website:</span> <a href="https://www.johndoe.com">www.johndoe.com</a></p>         
+            <p><span class="contact-label">Available Quantity:</span> 50 KG</p>         
+            <p><span class="contact-label">Required Quantity:</span> 30 KG</p>         
+        </div>     
+    </div> 
+</body> 
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address and Route on Google Maps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .map-card {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .map-container {
+            width: 100%;
+            height: 450px;
+            margin-bottom: 20px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        .address-details {
+            margin-bottom: 20px;
+        }
+        .address-details p {
+            margin: 5px 0;
+        }
+        .route-info {
+            background-color: #e9f7ef;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .route-info h2 {
+            color: #27ae60;
+            margin-top: 0;
+        }
+        @media (max-width: 600px) {
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map-card">
+        <h1>Empire State Building</h1>
+        
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/place/Nandha+Engineering+College+Cricket+Ground/@11.317985,77.5904692,12.75z/data=!4m10!1m2!2m1!1snandha+engg+college!3m6!1s0x3ba96d9726730e6d:0xbb1bf697bfb0335!8m2!3d11.2813018!4d77.6217807!15sChNuYW5kaGEgZW5nZyBjb2xsZWdlWhUiE25hbmRoYSBlbmdnIGNvbGxlZ2WSAQ5jcmlja2V0X2dyb3VuZJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOaGRWQklZVFZuUlJBQuABAA!16s%2Fg%2F11f4m9z865?entry=ttu&g_ep=EgoyMDI0MTEwNS4wIKXMDSoASAFQAw%3D%3D"
+                title="Google Maps route from Times Square to Empire State Building"
+                allowfullscreen="
+                "
+                loading="lazy">
+            </iframe>
+        </div>
+        
+        <div class="address-details">
+            <p><strong>Address:</strong> 20 W 34th St, New York, NY 10001, United States</p>
+            <p><strong>Coordinates:</strong> 40.7484° N, 73.9857° W</p>
+            <p><strong>Height:</strong> 1,454 ft (443.2 m)</p>
+        </div>
+        
+        <div class="route-info">
+            <h2>Route Information</h2>
+            <p>The map shows the walking route from Times Square to the Empire State Building.</p>
+            <p><strong>Starting Point:</strong> Times Square, New York, NY</p>
+            <p><strong>Destination:</strong> Empire State Building, 20 W 34th St, New York, NY 10001</p>
+            <p><strong>Estimated Walking Time:</strong> Approximately 12 minutes</p>
+            <p><strong>Distance:</strong> About 0.8 miles (1.3 km)</p>
+        </div>
+    </div>
+</body>
+</html>

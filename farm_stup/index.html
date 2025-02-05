@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP IN</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+        @font-face {
+            font-family: 'Bell MT';
+            src: url('https://db.onlinewebfonts.com/t/1b4dd5fc0e9103c3b11f0d1a23e20dce.woff2') format('woff2');
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            min-height: 100vh;
+            background-image: url('veggies.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Bell MT', serif;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        header nav {
+            margin-right: auto;
+            margin-left: 2rem;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+        }
+        header nav a:hover {
+            opacity: 0.8;
+        }
+        .login-buttons button {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+        .login-buttons button:hover {
+            background-color: white;
+            color: black;
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        .quote {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .buttons a {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+        }
+        .buttons a:nth-child(1) { background-color: #f214eb; }
+        .buttons a:nth-child(2) { background-color: #FFC107; }
+        .buttons a:nth-child(3) { background-color: #2196F3; }
+        .buttons a:hover { opacity: 0.8; }
+        .about {
+            background-color: rgba(255, 255, 255, 0.503);
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        @media (max-width: 600px) {
+            .quote { font-size: 1.5rem; }
+            .buttons { flex-direction: column; }
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-content h2 {
+            margin-top: 0;
+        }
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .modal-content button {
+            width: 100%;
+            padding: 10px;
+            background-color: #07c985;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .modal-content button:hover {
+            background-color: #f0e9d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">SHOP IN</div>
+            <nav>
+                <a href="#contact">Contact Us</a>
+            </nav>
+            
+            <div class="login-buttons">
+                <button onclick="window.location.href='loginFS.html'">Farmer Login</button>
+                <!-- <button id="moverLoginBtn">Mover Login</button> -->
+                <button onclick="window.location.href='loginFS.html'">Shop Login</button>
+                <button onclick="window.location.href='Movers.html'">Mover Login</button>
+                <button onclick="window.location.href='signupFS.html'">Sign Up</button>
+                
+            </div>
+        </header>
+
+        <main>
+            <div class="quote">From Fields to Shelves</div>
+            <div class="buttons">
+                <a href="product.html">Browse Products</a>
+                <a href="person-details.html">Meet Our Farmers</a>
+                <a href="location.html">Shop Locations</a>
+            </div>
+        </main>
+
+        <section class="about">
+            <h2>About SHOP IN</h2>
+            <p>SHOP IN is your direct connection to local farmers and fresh produce. We bridge the gap between hardworking farmers and conscious consumers, ensuring you get the freshest ingredients while supporting local agriculture. Our platform makes it easy to browse, order, and enjoy farm-fresh goods, all while knowing exactly where your food comes from.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 SHOP IN. All rights reserved.</p>
+        </footer>
+    </div>
+
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("moverLoginModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("moverLoginBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

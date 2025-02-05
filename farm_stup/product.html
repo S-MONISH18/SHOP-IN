@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Fresh Vegetables</h1>
+    <div class="product-grid" id="productList"></div>
+</div>
+
+<script>
+    const products = [
+        { id: 1, name: "Tomato (1 KG)", price: 30.00, image: "tomato250x200.jpg" },
+        { id: 2, name: "Carrot (1 KG)", price: 19.99, image: "carrot250x200.jpg" },
+        { id: 3, name: "Onion (1 KG)", price: 79.99, image: "onion250x200.jpg" },
+        { id: 4, name: "Brinjal (1 KG)", price: 40.99, image: "brinjal250x200.jpg" },
+        { id: 5, name: "Capsicum (1 KG)", price: 49.99, image: "capsicum250x200.jpg" },
+        { id: 6, name: "Cucumber (1 KG)", price: 25.99, image: "cucumber250x200.jpg" }
+    ];
+
+    const productList = document.getElementById('productList');
+    
+    productList.innerHTML = products.map(product => `
+        <div class="product-card" onclick="window.location.href='details.html?id=${product.id}'">
+            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <div class="product-info">
+                <div class="product-name">${product.name}</div>
+                <div class="product-price">$${product.price.toFixed(2)}</div>
+            </div>
+        </div>
+    `).join('');
+</script>
+
+</body>
+</html>
